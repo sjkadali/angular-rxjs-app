@@ -1,1 +1,2 @@
-# angular-rxjs-app
+# Angular-rxjs-app
+## An angular project using rxjs.
