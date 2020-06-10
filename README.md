@@ -1,2 +1,2 @@
-# Angular-RxJs-app
-## An angular project using RxJs- Reactive Extensions Library for JavaScript.
+# Angular-RxJs-Movie-App
+## Movie App created using Angular & RxJs.
