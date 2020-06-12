@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body,
+main {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: #75bbc7;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+main {
+    max-width: 920px;
+    margin: 0 auto;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #037c68;
+}
