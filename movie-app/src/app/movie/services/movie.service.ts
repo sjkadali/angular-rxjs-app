@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { filter} from 'rxjs/Operators'
 import { movies} from '../models/movie.model';
 
 @Injectable({
@@ -13,7 +14,8 @@ export class MovieService {
     return of(movies);
   }
 
-  get(id: number){
-    return of(movies.find(movie => +movie.id === +id));
+  get(id: number) {
+    return of(movies.find(movie => +movie.id == +id)
+    );
   }
 }
