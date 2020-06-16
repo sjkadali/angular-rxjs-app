@@ -3,6 +3,7 @@ import { MovieService } from '../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../models/movie.model';
 import { Subscription } from 'rxjs';
+import { NavbarService } from 'src/app/navbar/services/navbar.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -16,6 +17,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private movieService: MovieService,
+    private navbarService: NavbarService,
     private route: ActivatedRoute
   ) { }
 
@@ -23,6 +25,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.movieSub$ = this.movieService.get(this.id).subscribe(movie => {
       this.movie = movie;
+      this.navbarService.title.next(movie.name);
       console.log("Movie: " + this.movie);
     });
   }
