@@ -11,7 +11,7 @@ export const movies: Movie[] = [
         id: 1,
         name: 'Joseph',
         genre: 'Thriller',
-        image: 'https://en.wikipedia.org/wiki/Joseph_(2018_film)#/media/File:Joseph_film_poster.jpg',
+        image: 'https://en.wikipedia.org/w/index.php?curid=62577097',
         releaseYr: '2019'
     },
     {
