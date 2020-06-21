@@ -16,6 +16,10 @@ export class MovieService {
     return this.http.get<Movie[]>(this.ROOT_URL);
   }
 
+  movieFromHttp(id: number) {
+    return this.http.get<Movie>(`${this.ROOT_URL}/${id}`);
+  }
+
   getMovies(){
     return of(movies);
   }
