@@ -12,6 +12,10 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
+  addMovie(movie: Movie) {
+    return this.http.post(this.ROOT_URL, movie);
+  }
+
   getMoviesFromHttp() {
     return this.http.get<Movie[]>(this.ROOT_URL);
   }

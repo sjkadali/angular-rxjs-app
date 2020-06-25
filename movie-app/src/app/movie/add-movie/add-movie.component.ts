@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NavbarService } from 'src/app/navbar/services/navbar.service';
+import { MovieService } from './../services/movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-movie',
@@ -16,10 +18,23 @@ export class AddMovieComponent implements OnInit {
     releaseYr: new FormControl('', [Validators.required]),
   });
 
-  constructor(private navbarService: NavbarService) { }
+  constructor(
+    private router: Router,
+    private movieService: MovieService,
+    private navbarService: NavbarService) { }
 
   ngOnInit(): void {
     this.navbarService.title.next('Add Movies');
+  }
+
+  addMovie() {
+    if (this.movieForm.valid) {
+      this.movieService.addMovie(this.movieForm.value)
+        .subscribe(res => {
+          this.movieForm.reset();
+          this.router.navigate(['/']);
+        });
+    }
   }
 
 }
