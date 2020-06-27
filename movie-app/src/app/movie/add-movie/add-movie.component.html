@@ -4,6 +4,6 @@
     <input type="text" placeholder="Genre" formControName="genre" />
     <input type="text" placeholder="Release Year" formControName="releaseYr" />
 
-    <button type="submit">Add</button>
+    <button [disabled]="!movieForm.valid" type="submit">Add</button>
 
 </form>

@@ -28,16 +28,15 @@ export class AddMovieComponent implements OnInit {
   }
 
   addMovie() {
-    // if (this.movieForm.valid) {
+    if (this.movieForm.valid) {
       this.movieService.addMovie(this.movieForm.value)
         .subscribe(res => {
           this.movieForm.reset();
           this.router.navigate(['/']);
         });
-   /*  }
+    }
     else {
       console.log("form not valid");
-    } */
+    }
   }
-
 }
