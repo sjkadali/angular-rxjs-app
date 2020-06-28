@@ -1,9 +1,19 @@
 <form [formGroup]="movieForm" (ngSubmit)="addMovie()">
-    <input type="text" placeholder="Name" formControName="name" />
-    <input type="text" placeholder="Image URL" formControName="image" />
-    <input type="text" placeholder="Genre" formControName="genre" />
-    <input type="text" placeholder="Release Year" formControName="releaseYr" />
-
-    <button [disabled]="!movieForm.valid" type="submit">Add</button>
-
+    <div class="form-group">
+        <label > Name</label>
+        <input type="text" placeholder="Name" formControName="name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label > Image</label>
+        <input type="text" placeholder="Image URL" formControName="image" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label > Genre</label>
+        <input type="text" placeholder="Genre" formControName="genre"  class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label > Release Year</label>
+        <input type="text" placeholder="Release Year" formControName="releaseYr"  class="form-control"/>
+    </div>    
+    <button class="btn-btn-primary"[disabled]="!movieForm.valid" type="submit">Add</button>
 </form>
