@@ -24,7 +24,7 @@ export class EditMovieComponent implements OnInit {
   }
 
   onUpdate(): void {
-    console.log("form value: " + this.movieForm.value);
+    console.log("form value: " + this.movieForm);
   }
 
 

@@ -24,8 +24,7 @@ export class AddMovieComponent implements OnInit {
       image: new FormControl(),
       genre: new FormControl(),
       releaseYr: new FormControl(),
-    });
-  
+    });  
   }
 
   /* addMovie() {
@@ -43,7 +42,7 @@ export class AddMovieComponent implements OnInit {
   } */
 
   onSubmit():void {
-    console.log("form value: " + this.movieForm.value);
+    console.log("form value: " + this.movieForm);
 
   }
 }
