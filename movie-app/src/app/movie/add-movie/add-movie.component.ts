@@ -10,14 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
-
-  movieForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    image: new FormControl('', [Validators.required]),
-    genre: new FormControl('', [Validators.required]),
-    releaseYr: new FormControl('', [Validators.required]),
-  });
-
+  movieForm: FormGroup;
+  
   constructor(
     private router: Router,
     private movieService: MovieService,
@@ -25,9 +19,16 @@ export class AddMovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.navbarService.title.next('Add Movies');
+    this.movieForm = new FormGroup({      
+      name: new FormControl(),
+      image: new FormControl(),
+      genre: new FormControl(),
+      releaseYr: new FormControl(),
+    });
+  
   }
 
-  addMovie() {
+  /* addMovie() {
     if (this.movieForm.valid) {
       this.movieService.addMovie(this.movieForm.value)
         .subscribe(res => {
@@ -38,5 +39,11 @@ export class AddMovieComponent implements OnInit {
     else {
       console.log("form not valid");
     }
+    console.log("form value: " + this.movieForm);
+  } */
+
+  onSubmit():void {
+    console.log("form value: " + this.movieForm.value);
+
   }
 }

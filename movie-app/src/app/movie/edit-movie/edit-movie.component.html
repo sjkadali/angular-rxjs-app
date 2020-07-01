@@ -1,0 +1,10 @@
+<form [formGroup]="movieForm" (ngSubmit)="onUpdate">
+     <div class="form-group"> 
+        <input id="name" type="text" placeholder="Name" formControName="name" />
+    </div> 
+    <input id="image" type="text" placeholder="Image URL" formControName="image" />
+    <input id="genre" type="text" placeholder="Genre" formControName="genre" />
+    <input id="releaseYr" type="text" placeholder="Release Year" formControName="releaseYr" />
+
+    <button class="btn btn-primary" type="submit">Update</button>
+</form>
